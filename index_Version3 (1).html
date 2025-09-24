@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>BK Line SMANSA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Montserrat', sans-serif; }
+    body { background:#f9f9f9; color:#333; }
+    header {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:20px 60px; background:white; box-shadow:0 2px 5px rgba(0,0,0,0.1);
+      position:sticky; top:0; z-index:100;
+    }
+    header .nav-links a { margin:0 15px; text-decoration:none; color:#333; font-weight:600; cursor:pointer; }
+    header .btn { padding:8px 16px; border-radius:20px; border:none; cursor:pointer; font-weight:600; }
+    .btn-login { background:#FFD700; color:#0A1D56; }
+    .btn-signup { background:#0A1D56; color:white; margin-left:10px; }
+
+    .section { padding:40px 60px; display:none; }
+    .active { display:block; }
+
+    .hero {
+      display:flex; align-items:center; justify-content:space-between;
+      padding:60px;
+      background:linear-gradient(to right,#0A1D56 60%, #133074);
+      color:white;
+    }
+    .hero-text h1 { font-size:42px; margin-bottom:15px; }
+    .hero-text p { font-size:18px; margin-bottom:20px; }
+    .hero-text .btn { background:#FFD700; color:#0A1D56; padding:12px 24px; border-radius:30px; border:none; font-weight:800; cursor:pointer; }
+    .hero-img img { width:100%; border-radius:20px; max-width:400px; }
+
+    .gallery { display:grid; gap:20px; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); }
+    .gallery-item {
+      background:white; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1); padding:15px;
+    }
+    .gallery-item h3 { color:#0A1D56; margin-bottom:10px; }
+    .gallery-item p { font-size:14px; color:#555; }
+    .gallery-item img { width:100%; border-radius:10px; margin-bottom:10px; }
+
+    .info-cards { display:grid; gap:20px; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); }
+    .info { background:#0A1D56; color:white; padding:20px; border-radius:15px; }
+    .info h3 { color:#FFD700; margin-bottom:10px; }
+    .info p { margin:5px 0; }
+
+    .form-container {
+      background:white; padding:20px; border-radius:15px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1); max-width:500px; margin:auto;
+    }
+    .form-container h3 { margin-bottom:15px; color:#0A1D56; }
+    .form-container input {
+      width:100%; padding:10px; margin:10px 0; border:1px solid #ccc; border-radius:8px;
+    }
+    .form-container button {
+      background:#0A1D56; color:white; padding:10px 20px; border:none; border-radius:10px; font-weight:600; cursor:pointer;
+    }
+
+    footer {
+      background:#0A1D56; color:white; text-align:center; padding:20px; margin-top:30px;
+    }
+
+    .news-detail img { max-width:100%; border-radius:15px; margin-bottom:20px; }
+    .back-btn { margin-top:20px; display:inline-block; padding:10px 20px; background:#FFD700; color:#0A1D56; font-weight:700; border-radius:10px; cursor:pointer; text-decoration:none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h2 style="color:#0A1D56;">BK Line SMANSA</h2>
+  <div class="nav-links">
+    <a onclick="showSection('home')">Home</a>
+    <a onclick="showSection('galeri')">Galeri</a>
+    <a onclick="showSection('konseling')">Konseling</a>
+    <a onclick="showSection('kontak')">Kontak</a>
+  </div>
+  <div>
+    <button class="btn btn-login" onclick="showSection('login')">Log in</button>
+    <button class="btn btn-signup" onclick="showSection('signup')">Sign up</button>
+  </div>
+</header>
+
+<!-- HOME -->
+<section id="home" class="section active">
+  <div class="hero">
+    <div class="hero-text">
+      <h1>BK Line SMANSA</h1>
+      <p>Tempat Konsultasi, Curhat, dan Aspirasi Siswa SMAN 1 Bungo</p>
+      <button class="btn">Mulai Sekarang</button>
+    </div>
+    <div class="hero-img">
+      <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/512/external-counseling-back-to-school-flaticons-lineal-color-flat-icons.png" alt="Ikon Konseling">
+    </div>
+  </div>
+
+  <h2>Berita & Info Terbaru</h2>
+  <div class="gallery">
+    <!-- 8 berita -->
+    <div class="gallery-item">
+      <img src="https://img.icons8.com/color/300/school-director.png" alt="Kepala Sekolah">
+      <h3>Kepala SMAN 1 Bungo Raih Penghargaan Inovatif</h3>
+      <p>Kepala SMAN 1 Bungo menerima penghargaan sebagai Kepala Sekolah paling inovatif se-Provinsi Jambi.</p>
+      <a href="#" onclick="openNews('news1')" style="color:#0A1D56; font-weight:600;">Baca Selengkapnya</a>
+    </div>
+    <div class="gallery-item">
+      <img src="https://img.icons8.com/color/300/online-registration.png" alt="PPDB Online">
+      <h3>Isu Kecurangan PPDB Online</h3>
+      <p>Proses PPDB online di SMAN 1 Bungo mendapat sorotan karena dugaan adanya pelanggaran.</p>
+      <a href="#" onclick="openNews('news2')" style="color:#0A1D56; font-weight:600;">Baca Selengkapnya</a>
+    </div>
+    <div class="gallery-item">
+      <img src="https://img.icons8.com/color/300/uniform.png" alt="Seragam Sekolah">
+      <h3>Seragam Sekolah & Penjahit Uni War</h3>
+      <p>Komite serta orang tua siswa mempertanyakan penunjukan penjahit Uni War sebagai penyedia seragam sekolah.</p>
+      <a href="#" onclick="openNews('news3')" style="color:#0A1D56; font-weight:600;">Baca Selengkapnya</a>
+    </div>
+    <div class="gallery-item">
+      <img src="https://img.icons8.com/color/300/sports.png" alt="Olahraga">
+      <h3>Prestasi Olahraga</h3>
+      <p>Tim basket SMAN 1 Bungo berhasil meraih juara 1 tingkat provinsi.</p>
+      <a href="#" onclick="openNews('news4')" style="color:#0A1D56; font-weight:600;">Baca Selengkapnya</a>
+    </div>
+    <div class="gallery-item">
+      <img src="https://img.icons8.com/color/300/graduation-cap.png" alt="Wisuda">
+      <h3>Kelulusan Siswa</h3>
+      <p>Angkatan 2025 SMAN 1 Bungo melaksanakan acara wisuda dengan penuh khidmat.</p>
+      <a href="#" onclick="openNews('news5')" style="color:#0A1D56; font-weight:600;">Baca Selengkapnya</a>
+    </div>
+    <div class="gallery-item">
+      <img src="https://img.icons8.com/color/300/conference.png" alt="Seminar">
+      <h3>Seminar Karir</h3>
+      <p>Guru BK mengadakan seminar karir dengan menghadirkan alumni sukses SMAN 1 Bungo.</p>
+      <a href="#" onclick="openNews('news6')" style="color:#0A1D56; font-weight:600;">Baca Selengkapnya</a>
+    </div>
+    <div class="gallery-item">
+      <img src="https://img.icons8.com/color/300/microscope.png" alt="Sains">
+      <h3>Prestasi Sains</h3>
+      <p>Siswa SMAN 1 Bungo menjuarai Olimpiade Sains tingkat nasional.</p>
+      <a href="#" onclick="openNews('news7')" style="color:#0A1D56; font-weight:600;">Baca Selengkapnya</a>
+    </div>
+    <div class="gallery-item">
+      <img src="https://img.icons8.com/color/300/music.png" alt="Musik">
+      <h3>Festival Musik</h3>
+      <p>Ekstrakurikuler musik tampil memukau dalam festival seni kabupaten.</p>
+      <a href="#" onclick="openNews('news8')" style="color:#0A1D56; font-weight:600;">Baca Selengkapnya</a>
+    </div>
+  </div>
+</section>
+
+  <!-- ====== Section Galeri ====== -->
+<section id="galeri" style="padding: 50px; background-color: #f9f9f9;">
+  <div style="text-align: center; margin-bottom: 30px;">
+    <h2 style="font-family: 'Montserrat', sans-serif; font-weight: 700;">Galeri Kegiatan BK</h2>
+    <p style="color: #666;">Dokumentasi kegiatan terbaru SMANSA</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+    <div>
+      <img src="https://drive.google.com/uc?export=view&id=11ZRiUoYHwkaNfGik1UBla4ZyfBTMPnn1 " alt="Kegiatan 1" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    </div>
+    <div>
+      <img src="https://i.ibb.co/2M1hFHL/images-2.jpg" alt="Kegiatan 2" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    </div>
+    <div>
+      <img src="https://i.ibb.co/7XK9xC3/images-3.jpg" alt="Kegiatan 3" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    </div>
+    <div>
+      <img src="https://i.ibb.co/kKhDcsH/images-4.jpg" alt="Kegiatan 4" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    </div>
+  </div>
+</section>
+
+<!-- SIGN UP -->
+<section id="signup" class="section">
+  <div class="form-container">
+    <h3>Sign Up</h3>
+    <input type="text" placeholder="Nama Lengkap">
+    <input type="text" placeholder="Kelas">
+    <input type="text" placeholder="No. Handphone">
+    <input type="text" placeholder="NISN">
+    <button>Masuk</button>
+  </div>
+</section>
+
+<!-- LOGIN -->
+<section id="login" class="section">
+  <div class="form-container">
+    <h3>Log in</h3>
+    <input type="text" placeholder="Nama Lengkap">
+    <input type="text" placeholder="NISN">
+    <button>Daftar</button>
+  </div>
+</section>
+
+<!-- KONSELING -->
+<section id="konseling" class="section">
+  <h2>Form Konseling</h2>
+  <div class="form-container">
+    <iframe src="https://docs.google.com/forms/d/e/EXAMPLE_FORM_ID/viewform?embedded=true" width="100%" height="500px" frameborder="0">Memuat…</iframe>
+  </div>
+</section>
+
+<!-- KONTAK -->
+<section id="kontak" class="section">
+  <h2>Kontak Guru BK</h2>
+  <div class="info-cards">
+    <div class="info">
+      <h3>Ibu Rima</h3>
+      <p>No HP: 081234567890</p>
+    </div>
+    <div class="info">
+      <h3>Ibu Titin</h3>
+      <p>No HP: 089876543210</p>
+    </div>
+  </div>
+
+  <h2>Informasi Sekolah</h2>
+  <div class="info-cards">
+    <div class="info">
+      <h3>SMAN 1 Bungo</h3>
+      <p><strong>Alamat:</strong> Jl. Prof. Dr. Sri Soedewi, SH No.20, Pasir Putih, Rimbo Tengah, Kabupaten Bungo, Jambi</p>
+      <p><strong>Email:</strong> <a href="mailto:smansabungo.keren@gmail.com">smansabungo.keren@gmail.com</a></p>
+      <p><strong>Telepon:</strong> <a href="tel:+6274721109">(0747) 21109</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 BK Line SMANSA - SMAN 1 Bungo
+</footer>
+
+<script>
+  function showSection(id) {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(sec => {
+      if (sec.id === id) sec.classList.add('active');
+      else sec.classList.remove('active');
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function openNews(newsId) {
+    showSection(newsId);
+  }
+</script>
+
+</body>
+</html>
