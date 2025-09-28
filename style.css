@@ -1,0 +1,162 @@
+/* Import Montserrat Font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+  --primary-blue: #0D1C4A;
+  --bright-yellow: #FFD600;
+  --light-bg: #F9FAFB;
+  --card-shadow: 0 4px 16px rgba(13, 28, 74, 0.06);
+  --border-radius: 16px;
+}
+
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  background-color: var(--light-bg);
+  color: var(--primary-blue);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+header, nav {
+  background: var(--primary-blue);
+  color: #fff;
+  padding: 1rem 2rem;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav a {
+  color: var(--bright-yellow);
+  text-decoration: none;
+  font-weight: 700;
+  margin-left: 2rem;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #fff;
+  text-shadow: 0 2px 8px var(--bright-yellow);
+}
+
+.hero {
+  background: linear-gradient(120deg, var(--primary-blue) 60%, var(--bright-yellow) 100%);
+  color: #fff;
+  padding: 4rem 2rem 3rem 2rem;
+  text-align: center;
+  border-radius: var(--border-radius);
+  margin: 2rem auto;
+  max-width: 900px;
+  box-shadow: var(--card-shadow);
+}
+
+.hero h1 {
+  font-size: 2.7rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.card {
+  background: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 700px;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(13, 28, 74, 0.10);
+}
+
+.btn {
+  background: var(--bright-yellow);
+  color: var(--primary-blue);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 0.8rem 2rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(255, 214, 0, 0.10);
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+}
+
+.btn:hover {
+  background: var(--primary-blue);
+  color: var(--bright-yellow);
+  transform: scale(1.07);
+}
+
+.section-title {
+  color: var(--primary-blue);
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 3rem 0 1rem 0;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+footer {
+  background: var(--primary-blue);
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 3rem;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  box-shadow: var(--card-shadow);
+  font-size: 1rem;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  border-radius: 8px;
+  border: 1px solid var(--primary-blue);
+  padding: 0.6rem 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--bright-yellow);
+  box-shadow: 0 2px 12px rgba(255, 214, 0, 0.09);
+}
+
+/* Simple animation for load */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+.hero, .card, .section-title {
+  animation: fadeInUp 0.8s cubic-bezier(.61,-0.23,.64,1.27);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .hero, .card {
+    max-width: 98vw;
+    padding: 1rem;
+  }
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+  nav a { margin-left: 0.7rem; }
+  .section-title {
+    font-size: 1.3rem;
+  }
+}
