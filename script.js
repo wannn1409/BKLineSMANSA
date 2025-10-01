@@ -8,10 +8,6 @@ function showSection(id) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function openNews(newsId) {
-  showSection(newsId);
-}
-
 // === SLIDER GALERI ===
 let currentSlide = 0;
 
@@ -27,20 +23,11 @@ function showSlide(index) {
   slider.style.transform = `translateX(${offset}%)`;
 }
 
-function nextSlide() {
-  showSlide(currentSlide + 1);
-}
+function nextSlide() { showSlide(currentSlide + 1); }
+function prevSlide() { showSlide(currentSlide - 1); }
 
-function prevSlide() {
-  showSlide(currentSlide - 1);
-}
+setInterval(() => { nextSlide(); }, 5000);
 
-// Auto slide tiap 5 detik
-setInterval(() => {
-  nextSlide();
-}, 5000);
-
-// === INIT ===
 document.addEventListener("DOMContentLoaded", () => {
   showSlide(0);
 });
