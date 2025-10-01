@@ -156,37 +156,70 @@ input:focus, textarea:focus, select:focus {
     padding: 1rem;
   }
 
+/* SLIDER MODEL CARD */
 .slider-container {
   position: relative;
-  max-width: 700px;   
+  max-width: 900px;
   margin: auto;
   overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  padding: 20px 0;
 }
 
 .slider {
-  display: flex;  
+  display: flex;
   transition: transform 0.5s ease-in-out;
 }
 
-.slider img {
-  width: 100%;     
-  flex-shrink: 0;   
+.card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 15px;
+  margin-right: 20px;
+  min-width: 250px;
+  color: #333;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 14px;
+  color: #777;
+}
+
+.card h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0A1D56;
+}
+
+/* Controls */
+.slider-controls {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .slider-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  color: white;
+  background: #0A1D56;
   border: none;
-  font-size: 24px;
+  color: white;
+  font-size: 20px;
   padding: 10px;
   cursor: pointer;
   border-radius: 50%;
 }
 
-.slider-btn.left { left: 10px; }
-.slider-btn.right { right: 10px; }
+#slideIndicator {
+  font-weight: 700;
+  font-size: 16px;
+  color: #0A1D56;
+}
