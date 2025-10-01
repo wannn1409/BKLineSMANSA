@@ -9,25 +9,27 @@ function showSection(id) {
 }
 
 // === SLIDER GALERI ===
-let currentSlide = 0;
+let currentCard = 0;
 
-function showSlide(index) {
-  const slider = document.getElementById("galeriSlider");
-  const totalSlides = slider.children.length;
+function showCard(index) {
+  const slider = document.getElementById("cardSlider");
+  const totalCards = slider.children.length;
 
-  if (index >= totalSlides) currentSlide = 0;
-  else if (index < 0) currentSlide = totalSlides - 1;
-  else currentSlide = index;
+  if (index >= totalCards) currentCard = 0;
+  else if (index < 0) currentCard = totalCards - 1;
+  else currentCard = index;
 
-  const offset = -currentSlide * 100;
-  slider.style.transform = `translateX(${offset}%)`;
+  const offset = -currentCard * 270; // lebar card + margin
+  slider.style.transform = `translateX(${offset}px)`;
+
+  // update indikator
+  document.getElementById("slideIndicator").innerText =
+    (currentCard + 1).toString().padStart(2, "0");
 }
 
-function nextSlide() { showSlide(currentSlide + 1); }
-function prevSlide() { showSlide(currentSlide - 1); }
-
-setInterval(() => { nextSlide(); }, 5000);
+function nextCard() { showCard(currentCard + 1); }
+function prevCard() { showCard(currentCard - 1); }
 
 document.addEventListener("DOMContentLoaded", () => {
-  showSlide(0);
+  showCard(0);
 });
