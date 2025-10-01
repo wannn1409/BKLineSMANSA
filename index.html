@@ -148,22 +148,44 @@
 </section>
 
   <!-- ====== Section Galeri ====== -->
-section id="galeri" class="section">
+<section id="galeri" class="section">
   <div style="text-align: center; margin-bottom: 30px;">
     <h2 style="font-weight: 700;">Galeri Kegiatan BK</h2>
     <p style="color: #666;">Dokumentasi kegiatan terbaru SMANSA</p>
   </div>
+
   <div class="slider-container">
-    <button class="slider-btn left" onclick="prevSlide()">&#8592;</button>
-    <div class="slider" id="galeriSlider">
-      <img src="WhatsApp Image 2025-09-28 at 14.08.41.jpeg" alt="Kegiatan 1">
-      <img src="WhatsApp Image 2025-09-28 at 14.08.40.jpeg" alt="Kegiatan 2">
-      <img src="WhatsApp Image 2025-09-28 at 14.40.26.jpeg" alt="Kegiatan 3">
-      <img src="WhatsApp Image 2025-09-28 at 14.44.17.jpeg" alt="Kegiatan 4">
+    <div class="slider" id="cardSlider">
+      <div class="card">
+        <img src="WhatsApp Image 2025-09-28 at 14.08.41.jpeg" alt="Kegiatan 1">
+        <h3>Kegiatan</h3>
+        <h2>Seminar BK</h2>
+      </div>
+      <div class="card">
+        <img src="WhatsApp Image 2025-09-28 at 14.08.40.jpeg" alt="Kegiatan 2">
+        <h3>Kegiatan</h3>
+        <h2>Lomba OSN</h2>
+      </div>
+      <div class="card">
+        <img src="WhatsApp Image 2025-09-28 at 14.40.26.jpeg" alt="Kegiatan 3">
+        <h3>Kegiatan</h3>
+        <h2>Pelatihan Paskibra</h2>
+      </div>
+      <div class="card">
+        <img src="WhatsApp Image 2025-09-28 at 14.44.17.jpeg" alt="Kegiatan 4">
+        <h3>Kegiatan</h3>
+        <h2>Festival Musik</h2>
+      </div>
     </div>
-    <button class="slider-btn right" onclick="nextSlide()">&#8594;</button>
+
+    <div class="slider-controls">
+      <button class="slider-btn" onclick="prevCard()">&#10094;</button>
+      <button class="slider-btn" onclick="nextCard()">&#10095;</button>
+      <span id="slideIndicator">01</span>
+    </div>
   </div>
 </section>
+
   
 <!-- SIGN UP -->
 <section id="signup" class="section">
